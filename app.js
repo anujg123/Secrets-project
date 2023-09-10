@@ -77,16 +77,16 @@ passport.deserializeUser(function(id, done){
         done(err, null);
     })
 });
-console.log(process.env);
+
 passport.use(new GoogleStrategy({
-    clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
+    clientID: "307128567738-3s02r96i2gbhv9psuig6b874ba3h5ubd.apps.googleusercontent.com",
+    clientSecret: "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",
     callbackURL: "http://localhost:3000/auth/google/secrets",
 
   },
   function(accessToken, refreshToken, profile, cb) {
-    console.log(profile);
-    User.findOrCreate({ googleId: profile.id }, function (err, user) {
+  
+    User.findOrCreate({ googleId: profile.id,username:profile.name }, function (err, user) {
       return cb(err, user);
     });
   }
