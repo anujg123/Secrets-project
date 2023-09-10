@@ -38,7 +38,7 @@ app.use(passport.session());
 const mongoConnection = async()=>{
     try {
   
-   await   mongoose.connect("mongodb+srv://ghorpadeanuj56:ghorpadeanuj56@cluster0.rewuoco.mongodb.net/?retryWrites=true&w=majority",{useNewUrlParser: true});
+   await   mongoose.connect("mongodb+srv://ghorpadeanuj56:ghorpadeanuj56@cluster0.rewuoco.mongodb.net/",{useNewUrlParser: true});
   
    console.log("Connected succesfully");
       
