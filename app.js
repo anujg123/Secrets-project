@@ -144,6 +144,7 @@ app.get("/submit", function(req, res){
 });
 
 app.post("/submit", async function(req, res) {
+    console.log(req.isAuthenticated());
     if (req.isAuthenticated()) {
         const submittedSecret = req.body.secret;
         const userId = req.user.id;
